@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Anushka Padyal | Full Stack Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* Basic reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(15, 23, 42, 0.95);
+      border-bottom: 1px solid #1f2937;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-left {
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    nav a {
+      margin-left: 1rem;
+      font-size: 0.95rem;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem 1rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #f9fafb;
+      border-bottom: 1px solid #374151;
+      padding-bottom: 0.5rem;
+    }
+
+    /* Hero / intro */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #f9fafb;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: #9ca3af;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      border: 1px solid #4b5563;
+      border-radius: 999px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.8rem;
+      color: #d1d5db;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .hero-btn {
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      border: 1px solid #38bdf8;
+      color: #e5e7eb;
+      background: transparent;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .hero-btn:hover {
+      background: rgba(56, 189, 248, 0.1);
+    }
+
+    /* Lists */
+    ul {
+      list-style: none;
+    }
+
+    .item {
+      margin-bottom: 1.1rem;
+    }
+
+    .item-title {
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .item-subtitle {
+      font-size: 0.9rem;
+      color: #9ca3af;
+      margin-top: 0.1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .item-meta {
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-bottom: 0.25rem;
+    }
+
+    .item-bullets {
+      margin-left: 1rem;
+      margin-top: 0.25rem;
+    }
+
+    .item-bullets li {
+      position: relative;
+      padding-left: 0.9rem;
+      margin-bottom: 0.15rem;
+      font-size: 0.9rem;
+      color: #d1d5db;
+    }
+
+    .item-bullets li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #38bdf8;
+    }
+
+    /* Skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .skills-card {
+      border: 1px solid #1f2937;
+      border-radius: 0.75rem;
+      padding: 0.9rem 1rem;
+      background: #020617;
+    }
+
+    .skills-card-title {
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      color: #f9fafb;
+    }
+
+    .skills-card-list {
+      font-size: 0.9rem;
+      color: #d1d5db;
+    }
+
+    /* Contact */
+    .contact-list {
+      font-size: 0.95rem;
+    }
+
+    .contact-list div {
+      margin-bottom: 0.35rem;
+    }
+
+    footer {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+      border-top: 1px solid #1f2937;
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        flex-direction: column;
+      }
+      .hero-title {
+        font-size: 2.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="nav-left">ANUSHKA PADYAL</div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero / Intro -->
+    <section class="hero" id="top">
+      <div>
+        <h1 class="hero-title">Full Stack Engineer & Software Engineer</h1>
+        <p class="hero-subtitle">
+          Software Engineer with 4+ years of experience building web applications using Angular, ASP.NET MVC, C#, and SQL.
+          Strong backend foundation, RESTful APIs, and automated ETL processes that improve data reliability and system performance.
+        </p>
+      </div>
+
+      <div class="hero-tags">
+        <span class="tag">Full Stack Development</span>
+        <span class="tag">ASP.NET & C#</span>
+        <span class="tag">Angular</span>
+        <span class="tag">SQL & ETL</span>
+        <span class="tag">Agile Scrum</span>
+      </div>
+
+      <div class="hero-links">
+        <a class="hero-btn" href="mailto:anushkapadyal16@gmail.com">Email</a>
+        <a class="hero-btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="hero-btn" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        <!-- Optional: add resume link if you upload it to GitHub later -->
+        <!-- <a class="hero-btn" href="AnushkaPadyal_Resume.pdf" target="_blank" rel="noopener">View Resume</a> -->
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <h2 class="section-title">About</h2>
+      <p>
+        I’m a Full Stack Engineer with 4+ years of experience building scalable web applications and backend services.
+        My work spans Angular, ASP.NET MVC, C#, and SQL, with a strong focus on reliable data movement and integration
+        between distributed systems. I enjoy simplifying complex workflows, automating ETL processes, and collaborating
+        in Agile teams to ship impactful, production-ready features.
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="skills-card">
+          <div class="skills-card-title">Languages</div>
+          <div class="skills-card-list">
+            C#, JavaScript, TypeScript, Java, Python, SQL, HTML5, CSS
+          </div>
+        </div>
+        <div class="skills-card">
+          <div class="skills-card-title">Frameworks & Libraries</div>
+          <div class="skills-card-list">
+            .NET, ASP.NET MVC, Web API, jQuery, Angular, React, Express, Node.js
+          </div>
+        </div>
+        <div class="skills-card">
+          <div class="skills-card-title">Databases</div>
+          <div class="skills-card-list">
+            MS SQL, Oracle, MySQL, MongoDB, RDBMS
+          </div>
+        </div>
+        <div class="skills-card">
+          <div class="skills-card-title">Tools & Practices</div>
+          <div class="skills-card-list">
+            Git, GitHub, TFS, Jenkins, JIRA, Visual Studio, Trello, AppliTools, Cypress, Agile Scrum, CI/CD, SDLC
+          </div>
+        </div>
+        <div class="skills-card">
+          <div class="skills-card-title">Soft Skills</div>
+          <div class="skills-card-list">
+            Product ownership, leadership, team collaboration, research-oriented problem solving, documentation, strong communication
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <h2 class="section-title">Professional experience</h2>
+
+      <div class="item">
+        <div class="item-title">Senior Software Engineer</div>
+        <div class="item-subtitle">Persistent Systems Limited</div>
+        <div class="item-meta">10/2019 – 03/2022</div>
+        <ul class="item-bullets">
+          <li>Built Angular 11 components for a real-time case status SPA, improving business response time by 90%.</li>
+          <li>Designed RESTful Web APIs using ASP.NET MVC and C#, enhancing the Medical Bill Review process.</li>
+          <li>Engineered scalable SQL/ETL pipelines for client onboarding, improving legacy client migrations by 30%.</li>
+          <li>Automated data translation and loading in C# and PL/SQL, reducing manual workload by 50%.</li>
+          <li>Spearheaded ETL automation, cutting task times from 2 hours to under 3 minutes (recognized with the “Bravo!” award).</li>
+          <li>Mentored junior developers and led knowledge-sharing sessions, improving team delivery timelines by 20%.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-title">Software Engineer</div>
+        <div class="item-subtitle">Persistent Systems Limited</div>
+        <div class="item-meta">09/2018 – 10/2019</div>
+        <ul class="item-bullets">
+          <li>Developed and documented resolutions for time-synchronous C# jobs, increasing first-contact resolution by 40%.</li>
+          <li>Delivered enhancements and service requests for ASP.NET enterprise applications, ensuring stability and continuous improvement.</li>
+          <li>Monitored and optimized SQL jobs, reducing downtime by 15%.</li>
+          <li>Created a knowledge base of common production issues, reducing troubleshooting time by 25%.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="item">
+        <div class="item-title">Rent-A-Room Web App</div>
+        <div class="item-meta">01/2024 – 05/2024 · React, ASP.NET MVC, SQL Server</div>
+        <ul class="item-bullets">
+          <li>Architected and developed a feature-rich web application for room rentals using React and ASP.NET MVC.</li>
+          <li>Led a team of five, driving Agile SCRUM practices, sprint planning, and on-time delivery.</li>
+          <li>Optimized database interactions and backend performance with SQL Server.</li>
+          <li>Integrated responsive UI/UX components to ensure a smooth user experience across devices.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-title">Budget Tracker Web App</div>
+        <div class="item-meta">08/2023 – 12/2023 · MEAN stack, Cypress, AppliTools</div>
+        <ul class="item-bullets">
+          <li>Developed a Single Page Application using the MEAN stack for dynamic budgeting and expense tracking.</li>
+          <li>Integrated a cloud-based, serverless architecture to improve scalability and cost efficiency.</li>
+          <li>Engineered end-to-end tests in Cypress for comprehensive coverage and automation reliability.</li>
+          <li>Implemented visual regression testing with AppliTools to maintain UI consistency across environments.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+
+      <div class="item">
+        <div class="item-title">M.S. in Software and Information Systems</div>
+        <div class="item-subtitle">University of North Carolina at Charlotte</div>
+        <div class="item-meta">08/2023 – 12/2024 · GPA: 4.0 / 4.0</div>
+        <ul class="item-bullets">
+          <li>Coursework: Network Based Application Design, Applied Databases, Human Centered Design, Software Systems Design & Implementation.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-title">B.E. in Computer Science</div>
+        <div class="item-subtitle">RMD Sinhgad School of Engineering</div>
+        <div class="item-meta">08/2015 – 07/2018 · GPA: 3.6 / 4.0</div>
+        <ul class="item-bullets">
+          <li>Coursework: Software Design and Implementation, Data Structures, Database Management, Computer Networks.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-list">
+        <div><strong>Email:</strong> <a href="mailto:anushkapadyal16@gmail.com">anushkapadyal16@gmail.com</a></div>
+        <div><strong>Phone:</strong> (704) 526‑7740</div>
+        <div><strong>Location:</strong> Charlotte, NC</div>
+        <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn Profile</a></div>
+        <div><strong>GitHub:</strong> <a href="https://github.com/" target="_blank" rel="noopener">GitHub Profile</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Anushka Padyal. All rights reserved.
+  </footer>
+
+  <script>
+    // Set year dynamically
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
